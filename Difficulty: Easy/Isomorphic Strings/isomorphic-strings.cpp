@@ -17,18 +17,18 @@ class Solution
     {
         
         // Your code here
-        if(str1.size()!=str2.size()){
-            return false;
-        }
-        vector<int>s1(128, -1);
-        vector<int>s2(128, -1);
-        for(int i=0; i<str1.size(); i++){
-            if(s1[str1[i]]!=s2[str2[i]]){
+        vector<int>v1(128, -1);
+        vector<int>v2(128, -1);
+        
+        if(str1.size()!=str2.size()) return false;
+        for(int i=0; i<str1.size(); i++) {
+            if(v1[str1[i]] != v2[str2[i]]) {
                 return false;
             }
-            s1[str1[i]]=s2[str2[i]]=i;
+            v1[str1[i]] = v2[str2[i]] = i;
         }
         return true;
+        
     }
 };
 
